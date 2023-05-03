@@ -87,6 +87,10 @@ echo.
 1>nul 2>nul %PScommand% Add-AppxProvisionedPackage -Online -PackagePath %XboxIdentity% -DependencyPackagePath %DepXbox% -LicensePath Microsoft.XboxIdentityProvider_8wekyb3d8bbwe.xml
 %PScommand% Add-AppxPackage -Path %XboxIdentity%
 )
+sc config wuauserv start=auto
+sc config bits start=auto
+sc config cryptsvc start=auto
+sc config trustedinstaller start=auto
 goto :fin
 
 :uac
